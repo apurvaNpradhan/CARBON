@@ -37,7 +37,6 @@ export function AuthGuard({
    const router = useRouter();
    const [hasAttemptedRedirect, setHasAttemptedRedirect] = useState(false);
 
-   // Memoize redirect handler
    const handleRedirect = useCallback(() => {
       if (hasAttemptedRedirect) return;
 
@@ -46,20 +45,17 @@ export function AuthGuard({
    }, [router, redirectTo, redirectOptions, hasAttemptedRedirect]);
 
    useEffect(() => {
-      // Handle auth error
       if (error) {
          console.error("Authentication error:", error);
          handleRedirect();
          return;
       }
 
-      // Handle unauthenticated state
       if (!session && !isPending && !hasAttemptedRedirect) {
          handleRedirect();
       }
    }, [session, isPending, error, handleRedirect, hasAttemptedRedirect]);
 
-   // Early return for error state
    if (error) {
       return (
          <div
