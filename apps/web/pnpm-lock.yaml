@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@better-fetch/fetch':
+        specifier: ^1.1.18
+        version: 1.1.18
+
+packages:
+
+  '@better-fetch/fetch@1.1.18':
+    resolution: {integrity: sha512-rEFOE1MYIsBmoMJtQbl32PGHHXuG2hDxvEd7rUHE0vCBoFQVSDqaVs9hkZEtHCxRoY+CljXKFCOuJ8uxqw1LcA==}
+
+snapshots:
+
+  '@better-fetch/fetch@1.1.18': {}
